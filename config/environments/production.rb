@@ -10,6 +10,11 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
+    # Don't care if the mailer can't send.
+    config.action_mailer.raise_delivery_errors = :smtp
+
+    config.action_mailer.perform_caching = {:host => 'khoa-saas-app.herokuapp.com', :protocol => 'http'}
+
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
